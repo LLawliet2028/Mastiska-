@@ -1,0 +1,219 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: Arial, sans-serif;
+  }
+  .navbar {
+    z-index: 1000;
+    background-color: #FFDAB9;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    margin-left: 20px;
+  }
+  .navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  .navbar a:hover {
+    background-color: #dda07a;
+    border-radius: 2px;
+  }
+  section {
+    padding: 60px 80px;
+    background-color: #FFDAB9;
+    color: #333;
+    min-height: 100vh;
+  }
+  #logsign{
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 37%;
+      padding: 1%;
+  }
+
+  #join_us {
+    text-align: center;
+    margin-top: 20px; /* Adjust the top margin as needed */
+  }
+  #join_us button {
+    background-color: #ffdab9;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  #join_us button:hover {
+    background-color: #dda07a;
+  }
+
+  #lg_button,
+  #reg_button {
+  background-color: #ffdab9; /* Peach background color */
+  color: #333; /* Text color */
+  border: none;
+  padding: 10px 20px;
+  margin: 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px; /* Add rounded corners */
+  }
+
+  #lg_button:hover,
+  #reg_button:hover {
+  background-color: #dda07a; /* Darker peach color on hover */
+  }
+
+  .home {
+    background: linear-gradient(rgba(235, 205, 178, 0.792), rgba(255, 218, 185, 0.7)), url('{% static "Dashboard/mentalhealthhome.png"%}') center/cover;
+    margin-left: 2px;
+  }
+  .community{
+    background: linear-gradient(rgba(235, 205, 178, 0.792), rgba(255, 218, 185, 0.7)), url('{% static "Dashboard/communitypage.jpg"%}') center/cover;
+    margin-left: 2px;
+  }
+
+  .dashboard, .profile, .community, .chatbot {
+    background-color: #fff0e6;
+  }
+  .about{
+      background-color:  #dca27e;
+      min-height: 50vh;
+  }
+  /* Additional styles for the "Profile" link */
+  .navbar a#profile-link {
+    margin-right: 20px;
+    margin-left: auto; /* Push the "Profile" link to the rightmost end */
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 50%;
+  }
+  /* Styles for the "x" close button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  /* Additional styles for the login and register links in the profile modal */
+  .modal-content a {
+    color: #333;
+    text-decoration: underline;
+    margin-top: 10px;
+    display: block;
+  }
+  .peach-text {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .right-content {
+    text-align: right;
+  }
+
+  .left-content {
+    text-align: left;
+  }
+  /* Styles for the Developer Team Section */
+.developer-section {
+background-color: #dca27e; /* Background color for the developer section */
+color: #fff; /* Text color for the developer section */
+padding: 40px; /* Padding for the developer section */
+}
+
+.developer-section h2 {
+font-size: 28px; /* Font size for the developer section heading */
+margin-bottom: 20px; /* Bottom margin for the developer section heading */
+}
+
+.developer-section p {
+font-size: 16px; /* Font size for the developer section content */
+line-height: 1.5; /* Line height for better readability */
+margin-bottom: 20px; /* Bottom margin for the developer section content */
+}
+
+/* Styles for the Contact Details */
+.contact-details {
+margin-top: 20px; /* Top margin for the contact details */
+}
+
+.contact-details p {
+margin-bottom: 10px; /* Bottom margin for each contact detail */
+}
+
+.contact-details ul {
+list-style: none; /* Remove default list styles */
+padding: 0; /* Remove default padding for the list */
+}
+
+.contact-details li {
+margin-bottom: 5px; /* Bottom margin for each contact detail in the list */
+}
+
+.contact-details a {
+color: #fff; /* Text color for the contact details links */
+text-decoration: none; /* Remove default underline for the contact details links */
+}
+
+.contact-details a:hover {
+text-decoration: underline; /* Underline on hover for the contact details links */
+}
+
+/* Styles for the CTA Buttons */
+.cta-buttons {
+margin-top: 20px; /* Top margin for the CTA buttons */
+}
+
+.btn-sign-up-doctor {
+background-color: #fff; /* Background color for the sign-up button */
+color: #dca27e; /* Text color for the sign-up button */
+padding: 10px 20px; /* Padding for the sign-up button */
+text-decoration: none; /* Remove default underline for the sign-up button */
+display: inline-block; /* Ensure inline block display for the button */
+border-radius: 5px; /* Add rounded corners */
+font-size: 16px; /* Font size for the sign-up button */
+margin-right: 20px; /* Right margin for the sign-up button */
+}
+
+.btn-sign-up-doctor:hover {
+background-color: #dda07a; /* Darker peach color on hover for the sign-up button */
+color: #fff; /* Text color on hover for the sign-up button */
+}

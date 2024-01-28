@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastiṣka</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #dda07a; /* Lighter peach background color */
+        }
+
+        header {
+            background-color: #dda07a; /* Light peach color for header */
+            padding: 15px;
+            text-align: center;
+            color: #333; /* Darker text color */
+        }
+
+        nav {
+            background-color: #ffdab9; /* Light peach color for navigation bar */
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: #333; /* Darker text color */
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .article-box {
+            width: 300px;
+            height: 150px;
+            background-color: #FFEBD4; /* Lighter peach background for article boxes */
+            margin: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .article-box h2 {
+            color: #FF6347; /* Tomato color for article headings */
+        }
+
+        .article-box a {
+            color: #FF6347; /* Tomato color for article links */
+        }
+
+        footer {
+            background-color: #FFDAB9; /* Light peach color for footer */
+            padding: 15px;
+            text-align: center;
+            color: #333; /* Darker text color */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Additional styling for chat page */
+        .chat-box {
+            width: 60%;
+            margin: 0 auto; /* Center the chat box */
+            background-color: #FFF; /* White background for chat box */
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            min-height: 60vh;
+        }
+
+        .input-box {
+            background-color: #FFF; /* White background for input box */
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        input[type="text"] {
+            width: 80%; /* Adjust the width as needed */
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .input-area {
+            display: flex;
+        }
+
+        .post-it {
+            margin-left: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #FFB07C; /* Slightly darker peach color for the submit button */
+            color: white;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #FFA475; /* Slightly darker tone on hover */
+        }
+
+        .message-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+
+        .message-box {
+            background-color: #add8e6; /* Light blue background for messages */
+            padding: 8px;
+            border-radius: 5px;
+            max-width: 70%; /* Adjust the maximum width as needed */
+            word-wrap: break-word;
+        }
+        button {
+            background-color: #FFB07C; /* Slightly darker peach color for the button */
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        button:hover {
+            background-color: #FFA475; /* Slightly darker tone on hover */
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mental Well</h1>
+    </header>
+
+    <nav>
+        <a href="{% url 'community:home'%}"><button>Home</button></a>
+        <a href="{% url 'community:article' %}"><button>Articles</button></a>
+        <a href="{% url 'community:mainpage' %}"><button>Community</button></a>
+        <a href="#"><button>Profile</button></a>
+    </nav>
+
+    <div class="article-box">
+        <h2>WHO</h2>
+        <p>Mental health is a state of mental well-being that enables people to cope with the stresses of life, realize...</p>
+        <a href="https://www.who.int/news-room/fact-sheets/detail/mental-health-strengthening-our-response/?gclid=CjwKCAiAk9itBhASEiwA1my_6yZh1q1fngBy50XXJjdH4yiK6oZJQHsUGLVFO5ddbWkomD1kQSEqTBoCO00QAvD_BwE"><button>Read more</button></a>
+    </div>
+    
+    <div class="article-box">
+        <h2>“Mental illness ”</h2>
+        <p>The nature of mental illness has been the subject of passionate discussion throughout history...</p>
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4409431/"><button>Read more</button></a>
+    </div>
+    
+    <div class="article-box">
+        <h2>“Mental illness ”</h2>
+        <p>The nature of mental illness has been the subject of passionate discussion throughout history...</p>
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4409431/"><button>Read more</button></a>
+    </div>
+
+    
+    <div class="article-box">
+        <h2>This is my Brave</h2>
+        <p>This Is My Brave empowers individuals to put their names and faces to their true stories......</p>
+        <a href="https://thisismybrave.org/support/?gad_source=1&gclid=CjwKCAiAk9itBhASEiwA1my_681jDOHKcaKz93P0TDyATA1VxGyouDxlrt37Le_AZ4xaZkwVIXs-2BoC7tcQAvD_BwE"><button>Read more</button></a>
+    </div>
+
+    
+
+    
+</body>
+</html>

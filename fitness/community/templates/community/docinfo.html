@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consult a Doctor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffdab9; /* Peach background color */
+            color: #333; /* Darker text color */
+        }
+
+        h1 {
+            background-color:#dda07a; /* Light peach color for heading background */
+            padding: 15px;
+            text-align: center;
+        }
+
+        .doctor-box {
+            border: 1px solid #FFDAB9; /* Light peach color for border */
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #FFF; /* White background for doctor boxes */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Added position relative for positioning the image */
+            width : 70%;
+            margin-left: 17%;
+        }
+
+        .doctor-box h2 {
+            color: #FF6347; /* Tomato color for doctor names */
+        }
+
+        .doctor-box p {
+            color: #333; /* Darker text color for qualifications and contact details */
+        }
+
+        .doctor-box ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .doctor-box li {
+            margin-bottom: 5px;
+        }
+
+        .doctor-image {
+            margin-top: 27px;
+            margin-right: 15px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            max-width: 70%; /* Adjust the max-width as needed */
+            height: 70%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Consult a Doctor</h1>
+
+    <div class="doctor-box">
+        <h2>Dr. John Doe</h2>
+        <img src="{% static 'community/download.jpg'%}" alt="Dr. John Doe" class="doctor-image">
+        <p>Qualifications: MD in Psychiatry</p>
+        <p>Contact Details:</p>
+        <ul>
+            <li>Email: drjohndoe@example.com</li>
+            <li>Phone: +1 (555) 123-4567</li>
+            <li>Address: 123 Main Street, Cityville, State, Zip</li>
+        </ul>
+    </div>
+
+    <div class="doctor-box">
+        <h2>Dr. Jane Smith</h2>
+        <img src="{% static 'community/doctor-avatar-character-icon-vector-12866526.jpg'%}" alt="Dr. Jane Smith" class="doctor-image">
+        <p>Qualifications: PhD in Clinical Psychology</p>
+        <p>Contact Details:</p>
+        <ul>
+            <li>Email: drjanesmith@example.com</li>
+            <li>Phone: +1 (555) 987-6543</li>
+            <li>Address: 456 Oak Avenue, Townsville, State, Zip</li>
+        </ul>
+    </div>
+
+    <div class="doctor-box">
+        <h2>Dr. Michael Johnson</h2>
+        <img src="{% static 'community/doctor-web-icon-therapist-avatar-vector-18531480.jpg'%}" alt="Dr. Michael Johnson" class="doctor-image">
+        <p>Qualifications: MSW in Social Work</p>
+        <p>Contact Details:</p>
+        <ul>
+            <li>Email: drmichaeljohnson@example.com</li>
+            <li>Phone: +1 (555) 789-0123</li>
+            <li>Address: 789 Pine Street, Villagetown, State, Zip</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+body { font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; height: 100vh; margin: 0; padding: 0; box-sizing: border-box; }
+#chat-area {
+    margin: 0 auto;
+    width: 80%;
+    height: 500px;
+    overflow-y: scroll;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.input {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+textarea {
+    width: calc(100% - 20px); /* Adjusted width to account for padding */
+    padding: 10px; /* Added padding */
+    box-sizing: border-box; /* Box sizing to include padding in width calculation */
+}
+
+.box {
+    width: 96%;
+    padding: 10px; /* Added padding */
+    background-color: #C4DBFE;
+    margin: 10px auto;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.answer {
+    background-color: aquamarine;
+}
+
+button {
+    background-color: #004089;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer; /* Added cursor pointer for better UX */
+}

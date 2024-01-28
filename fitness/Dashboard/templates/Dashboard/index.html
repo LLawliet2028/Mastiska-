@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mastiṣka</title>
+  
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      font-family: Arial, sans-serif;
+    }
+    .navbar {
+      z-index: 1000;
+      background-color: #FFDAB9;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      margin-left: 20px;
+    }
+    .navbar a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    .navbar a:hover {
+      background-color: #dda07a;
+      border-radius: 2px;
+    }
+    section {
+      padding: 60px 80px;
+      background-color: #FFDAB9;
+      color: #333;
+      min-height: 100vh;
+    }
+    #logsign{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 37%;
+        padding: 1%;
+    }
+
+    #join_us {
+      text-align: center;
+      margin-top: 20px; /* Adjust the top margin as needed */
+    }
+    #join_us button {
+      background-color: #f9c9a1;
+      color: #333;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #join_us button:hover {
+      background-color: #dda07a;
+    }
+
+    #lg_button,
+    #reg_button {
+    background-color: #ffdab9; /* Peach background color */
+    color: #333; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    margin: 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px; /* Add rounded corners */
+    }
+
+    #lg_button:hover,
+    #reg_button:hover {
+    background-color: #dda07a; /* Darker peach color on hover */
+    }
+
+    .home {
+      background: linear-gradient(rgba(235, 205, 178, 0.792), rgba(255, 218, 185, 0.7)), url('{% static "Dashboard/mentalhealthhome.png"%}') center/cover;
+      margin-left: 2px;
+    }
+    .community{
+      background: linear-gradient(rgba(235, 205, 178, 0.792), rgba(255, 218, 185, 0.7)), url('{% static "Dashboard/communitypage.jpg"%}') center/cover;
+      margin-left: 2px;
+    }
+
+    .dashboard, .profile, .community, .chatbot {
+      background-color: #fff0e6;
+    }
+    .about{
+        background-color:  #dca27e;
+        min-height: 50vh;
+    }
+    /* Additional styles for the "Profile" link */
+    .navbar a#profile-link {
+      margin-right: 20px;
+      margin-left: auto; /* Push the "Profile" link to the rightmost end */
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      width: 50%;
+    }
+    /* Styles for the "x" close button */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    /* Additional styles for the login and register links in the profile modal */
+    .modal-content a {
+      color: #333;
+      text-decoration: underline;
+      margin-top: 10px;
+      display: block;
+    }
+    .peach-text {
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .right-content {
+      text-align: right;
+    }
+
+    .left-content {
+      text-align: left;
+    }
+    /* Styles for the Developer Team Section */
+.developer-section {
+  background-color: #dca27e; /* Background color for the developer section */
+  color: #fff; /* Text color for the developer section */
+  padding: 40px; /* Padding for the developer section */
+}
+
+.developer-section h2 {
+  font-size: 28px; /* Font size for the developer section heading */
+  margin-bottom: 20px; /* Bottom margin for the developer section heading */
+}
+
+.developer-section p {
+  font-size: 16px; /* Font size for the developer section content */
+  line-height: 1.5; /* Line height for better readability */
+  margin-bottom: 20px; /* Bottom margin for the developer section content */
+}
+
+/* Styles for the Contact Details */
+.contact-details {
+  margin-top: 20px; /* Top margin for the contact details */
+}
+
+.contact-details p {
+  margin-bottom: 10px; /* Bottom margin for each contact detail */
+}
+
+.contact-details ul {
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding for the list */
+}
+
+.contact-details li {
+  margin-bottom: 5px; /* Bottom margin for each contact detail in the list */
+}
+
+.contact-details a {
+  color: #fff; /* Text color for the contact details links */
+  text-decoration: none; /* Remove default underline for the contact details links */
+}
+
+.contact-details a:hover {
+  text-decoration: underline; /* Underline on hover for the contact details links */
+}
+
+/* Styles for the CTA Buttons */
+.cta-buttons {
+  margin-top: 20px; /* Top margin for the CTA buttons */
+}
+
+.btn-sign-up-doctor {
+  background-color: #fff; /* Background color for the sign-up button */
+  color: #dca27e; /* Text color for the sign-up button */
+  padding: 10px 20px; /* Padding for the sign-up button */
+  text-decoration: none; /* Remove default underline for the sign-up button */
+  display: inline-block; /* Ensure inline block display for the button */
+  border-radius: 5px; /* Add rounded corners */
+  font-size: 16px; /* Font size for the sign-up button */
+  margin-right: 20px; /* Right margin for the sign-up button */
+}
+
+.btn-sign-up-doctor:hover {
+  background-color: #dda07a; /* Darker peach color on hover for the sign-up button */
+  color: #fff; /* Text color on hover for the sign-up button */
+}
+
+  </style>
+</head>
+<body>
+<div class="navbar">
+  <div class="logo">
+    <img src="{% static 'Dashboard/logo.png' %}" alt="Logo" height="50">
+  </div>
+  <a href="#home">Home</a>
+  <a href="#community">Community</a>
+  <a href="{% url 'chatbot:chatbot' %}">Chatbot</a>
+  <a href="#about">About Us</a>
+  <a id="profile-link" onclick="openProfileModal()">Profile</a>
+</div>
+
+<section id="home" class="home">
+  <div>
+    <h2>Welcome to Mastiṣka - Your Ultimate Mental Wellness Hub!</h2>
+    <p>Embark on a transformative journey with us, your dedicated haven for mental health support.</p>
+
+    <div>
+      <h3>🌟 Chatbot Bliss:</h3>
+      <p>24/7 chat support for instant relief. We're here to listen, anytime you need a friend.</p>
+    </div>
+
+    <div>
+      <h3>🌟 Community Connection:</h3>
+      <p>Join a vibrant space where support flows 24/7. Connect, share, and thrive with like-minded souls.</p>
+    </div>
+
+    <div>
+      <h3>🌟 Doc-on-Demand:</h3>
+      <p>Tap into a network of certified doctors. Professional guidance for your mental wellness journey.</p>
+    </div>
+
+    <div>
+      <h3>🌟 Empowering Resources:</h3>
+      <p>Dive into curated articles, tools, and expert advice. Your go-to hub for holistic well-being.</p>
+    </div>
+
+    <div>
+      <h3>🌟 Confidential Care:</h3>
+      <p>Explore, chat, connect—all in a secure, confidential haven. Your journey, your sanctuary.</p>
+    </div>
+
+    <p>Ready to take control of your mental wellness?</p> 
+</section>
+
+
+<!-- Modal for the Profile -->
+<div id="profileModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeProfileModal()">&times;</span>
+      {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }}!</p>
+        <!-- Add additional user profile information here -->
+      {% else %}
+        <h2 style="margin-left: 20%;">Not Registered yet sign up below (or login)</h2>
+       <div id="logsign">
+        <div> <a href="{% url 'chatbot:login'%}"><button id="lg_button">Login</button></a></div>
+       <div> <a href="{% url 'chatbot:register'%}"><button id="reg_button">sign up</button></a></div>
+       </div>
+      {% endif %}
+    </div>
+</div>
+
+<section id="community" class="community">
+  <h1>Community</h1>
+  <div id="join_us">
+    <p class="peach-text">A world where support knows no bounds! At Mental Well begin, we've crafted a vibrant hub for sharing, learning, and uplifting each other on the path to mental well-being.</p>
+    <p class="peach-text right-content">Engage in peer support, connect with experts, and dive into enriching resources.</p>
+    <a href="{% url 'chatbot:community'%}"><button>Join Us!</button></a>
+    <p class="peach-text left-content">Unleash your potential in live workshops, exciting challenges, and join a community that thrives on connection and empowerment.</p>
+    <p class="peach-text">Ready to make well-being your journey? Join us now for a boost of positivity and resilience!</p>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <h1>About Us</h1>
+  <!-- Developer Team Section -->
+  <div class="developer-section">
+      <h2>Our Developer Team</h2>
+      <p>We are a passionate team of 3 developers dedicated to creating innovative solutions for healthcare.</p>
+      
+      <!-- Contact Details -->
+      <div class="contact-details">
+          <p>Connect with us:</p>
+          <ul>
+              <li><a href="https://www.linkedin.com/your-linkedin" target="_blank">LinkedIn</a></li>
+              <li><a href="https://www.instagram.com/your-instagram" target="_blank">Instagram</a></li>
+          </ul>
+      </div>
+
+      <!-- Sign Up Button and Customer Service Email -->
+      <div class="cta-buttons">
+          <a href="{% url 'chatbot:doc_login'%}" class="btn-sign-up-doctor">Sign Up as a Doctor</a>
+          <p>For customer service, email us at: <a href="mailto:customerservice@example.com">customerservice@example.com</a></p>
+      </div>
+  </div>
+</section>
+
+<!-- JavaScript to control the modal -->
+<script>
+  function openProfileModal() {
+    document.getElementById('profileModal').style.display = 'block';
+  }
+
+  function closeProfileModal() {
+    document.getElementById('profileModal').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
